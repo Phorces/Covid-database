@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>COVID DATA</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1>COVID 19 DATABASE</h1>
+      <table>
+        <thead>
+            <th>NUMBER</th>
+          <th><strong>COUNTRY</strong></th>
+          <th><strong>CONFIRMED CASES</strong></th>
+          <th><strong>DEATHS</strong></th>
+          <th><strong>RECOVERED</strong></th>
+          <th><strong>ACTIVE CASES</strong></th>
+        </thead>
+        <tbody id="root"></tbody>
+      </table>
+    </div>
+    <script type="text/jsx">
+
+      const data = [
+                      {id: 1, number: 1,  country: "Peru", confirmed: 13453, deaths: 875, recovered: 0, active: 12578},
+                      {id: 2, number: 2,  country: "China", confirmed: 991, deaths: 6, recovered: 985, active: 0},
+                      {id: 3, number: 3,  country: "Colombia", confirmed: 46834, deaths: 788, recovered: 5200, active: 27657},
+                      {id: 4, number: 4,  country: "Spain", confirmed: 834, deaths: 108, recovered: 200, active: 420},
+                      {id: 5, number: 5,  country: "Russia", confirmed: 634, deaths: 203, recovered: 212, active: 203},
+                      {id: 6, number: 6,  country: "Japan", confirmed: 7853, deaths: 2033, recovered: 85, active: 276},
+                      {id: 7, number: 7,  country: "China", confirmed: 899, deaths: 402, recovered: 289, active: 540},
+                      {id: 8, number: 8,  country: "Paraguay", confirmed: 611, deaths: 230, recovered: 389, active: 657},
+                      {id: 9, number: 9,  country: "Uzbekistan", confirmed: 1055, deaths: 465, recovered: 389, active: 277},
+                      {id: 10, number: 10,  country: "South Africa", confirmed: 3044, deaths: 1720, recovered: 509, active: 257}
+                      ];
+                      
+
+          function Covid(props){
+              console.log(props)
+              return (
+                      <tr>
+                          <td>{props.number}</td>
+                          <td>{props.country}</td>
+                          <td>{props.confirmed}</td>
+                          <td>{props.deaths}</td>
+                          <td>{props.recovered}</td>
+                          <td>{props.active}</td>
+                      </tr>
+              );
+          }
+
+          let covid=data.map(i => <Covid key={i.id} number={i.number} country={i.country} confirmed={i.confirmed} deaths={i.deaths} recovered={i.recovered} active={i.active}/>)
+          ReactDOM.render(
+          <React.StrictMode>
+              {covid}
+          </React.StrictMode>, document.getElementById("root"));
+    </script>
+  </body>
+</html>

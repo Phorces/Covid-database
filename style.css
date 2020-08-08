@@ -1,0 +1,17 @@
+.container{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    background-color: #13374d;
+    text-align: center;
+}
+table{
+    border-spacing: 2rem;
+    text-align: center;
+    color: #ffffff;
+    position: relative ;
+    left 25%;
+}
+h1{
+    color: #ffffff;
+}
